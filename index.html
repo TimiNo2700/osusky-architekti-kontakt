@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Osuský Architekti</title>
+    <title>Osuský Architekti - Kontakt</title>
     <style>
+        /* Basic styles for the contact page */
         * {
             margin: 0;
             padding: 0;
@@ -13,27 +14,29 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
+            background-color: #f7f7f7; /* Light gray background for the body */
         }
         header {
-            background: transparent; /* Make header background transparent */
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: fixed; /* Position the header at the top of the page */
+            position: fixed;
             top: 0;
             width: 100%;
-            z-index: 10; /* Ensure the header stays above the video */
+            z-index: 10;
         }
         .logo-title {
             display: flex;
             align-items: center;
         }
         .logo-title a {
-            text-decoration: none; /* Remove underline from logo link */
-            color: inherit; /* Inherit text color */
-            display: flex; /* Ensure link takes the full width of logo */
-            align-items: center; /* Center align items */
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
         }
         .logo-title img {
             height: 50px;
@@ -45,15 +48,15 @@
         }
         nav {
             display: flex;
-            align-items: center; /* Align items vertically in the header */
+            align-items: center;
         }
         nav a {
             color: black;
-            padding: 15px 20px; /* Increase padding for larger clickable area */
+            padding: 15px 20px;
             text-decoration: none;
             text-align: center;
-            font-size: 1.2em; /* Increase font size */
-            margin-right: 10px; /* Adjusted margin to move links closer */
+            font-size: 1.2em;
+            margin-right: 10px;
         }
         nav a:hover {
             background: #ddd;
@@ -61,19 +64,131 @@
         .social-icons {
             display: flex;
             align-items: center;
-            margin-left: 10px; /* Added margin to separate icons */
+            margin-left: 10px;
         }
         .social-icons a {
-            margin: 0 5px; /* Adjusted margin to move icons closer */
+            margin: 0 5px;
         }
         .social-icons img {
-            height: 30px; /* Set the height of icons */
+            height: 30px;
         }
         .menu-icon {
-            display: none; /* Hide the menu icon by default */
-            transition: transform 0.3s ease; /* Smooth transformation */
+            display: none;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between; /* Arrange items in a row with space between */
+            align-items: flex-start; /* Align items to the top */
+            flex-direction: row; /* Arrange items horizontally */
+            padding: 20px;
+            margin-top: 100px;
+            max-width: 1400px; /* Increase max-width for larger screens */
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #f7f7f7; /* Light gray background for content area */
+        }
+        .content h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 1.4em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .content form {
+            width: 100%; /* Full width for the form */
+            max-width: 600px; /* Adjusted width for the form */
+            padding: 20px;
+            background: #e0e0e0; /* Gray background color */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px; /* Add space between form and contact info box */
+        }
+        .content form label {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        .content form input[type="text"],
+        .content form input[type="email"],
+        .content form textarea,
+        .content form input[type="file"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        .content form textarea {
+            resize: vertical;
+        }
+        .content form input[type="file"] {
+            background-color: white; /* Match background color with other input fields */
+        }
+        .content form input[type="submit"] {
+            background: black; /* Black background color */
+            color: white; /* Text color */
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1.1em;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+        .content form input[type="submit"]:hover {
+            background: #333; /* Darken the background color on hover */
+        }
+        .contact-info {
+            width: 100%; /* Full width for contact info */
+            max-width: 600px; /* Adjusted width for contact info */
+            background: #e0e0e0; /* Gray background color */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: left;
+            flex: 1; /* Take remaining space */
+            margin-left: 20px; /* Add space between form and contact info box */
+            height: 100%; /* Full height */
+            display: flex; /* Enable flexbox layout */
+            flex-direction: column; /* Arrange children in a column */
+            justify-content: space-between; /* Space evenly between children */
+        }
+        .contact-info h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        .contact-info p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 16px; /* Increased margin bottom for separation */
+        }
+        .contact-info a {
+            color: black; /* Make email links black */
+            text-decoration: none; /* Remove underlines */
+        }
+        footer {
+            background: #f4f4f4;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
         @media only screen and (max-width: 768px) {
+            .content {
+                flex-direction: column; /* Stack items vertically for small screens */
+            }
+            .content form,
+            .contact-info {
+                width: 100%; /* Full width on smaller screens */
+                max-width: 100%; /* Limit width on smaller screens */
+            }
+            .contact-info {
+                margin-left: 0; /* Reset margin for mobile layout */
+                margin-top: 20px; /* Add space between form and contact info box */
+            }
             .menu-icon {
                 display: flex; /* Display the menu icon for smaller screens */
                 justify-content: center;
@@ -106,15 +221,6 @@
                 transform: translateY(0); /* Move to original position */
             }
         }
-        footer {
-            background: #f4f4f4;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-       
-        }
     </style>
 </head>
 <body>
@@ -128,28 +234,62 @@
         <nav>
             <a href="https://timino2700.github.io/osusky-architekti/">Domov</a>
             <a href="https://timino2700.github.io/osusky-architekti-onas/">O nás</a>
-            <a href="https://timino2700.github.io/osusky-architekti-kontakt/">Kontakt</a>
+            <a href="kontakt.html">Kontakt</a>
             <a href="https://timino2700.github.io/osusky-architekti-projekty/">Projekty</a>
             <div class="social-icons">
                 <a href="https://www.instagram.com/your-instagram-profile" target="_blank"><img src="https://timino2700.github.io/osusky-architekti/instagram.png" alt="Instagram"></a>
                 <a href="https://www.facebook.com/osusky.architekti/" target="_blank"><img src="https://timino2700.github.io/osusky-architekti/facebook.png" alt="Facebook"></a>
             </div>
         </nav>
-        <div class="menu-icon">&#9776;</div> <!-- Menu icon symbol -->
+        <div class="menu-icon">&#9776;</div>
     </header>
 
+    <div class="content">
+        <div style="margin-right: 20px;">
+            <h2>Kontaktujte nás</h2>
+            <p>Tu môžete napísať správu alebo otázku, a my sa Vám čoskoro ozveme.</p>
+
+            <form action="mailto:timotejko2007@gmail.com" method="post" enctype="multipart/form-data">
+                <label for="name">Meno:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">Správa:</label>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+                <label for="attachment">Príloha:</label>
+                <input type="file" id="attachment" name="attachment"><br><br>
+
+                <input type="submit" value="Odoslať">
+            </form>
+        </div>
+
+        <div class="contact-info">
+            <h3>Kontakt informácie</h3>
+            <p><strong>Zavolaj nám:</strong> +421 905 335 890</p>
+            <p><strong>Adresa:</strong> Šípová ulica 2598/23, 917 01 Trnava</p>
+            <p><strong>Email:</strong> <a href="mailto:oarchitekti@gmail.com">oarchitekti@gmail.com</a></p>
+            <p><strong>Facebook:</strong> <a href="https://www.facebook.com/osusky.architekti/" target="_blank">facebook.com/osusky.architekti</a></p>
+            <p><strong>Instagram:</strong> <a href="https://www.instagram.com/your-instagram-profile" target="_blank">instagram.com</a></p>
+
+            <!-- Google Maps Embed -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2676.529313245179!2d17.56937011580862!3d48.377879979242576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c897201090c57%3A0x2e174dab6b199b5f!2s%C5%A0%C3%ADpov%C3%A1%202598%2F23%2C%20917%2001%20Trnava!5e0!3m2!1sen!2ssk!4v1625561996520!5m2!1sen!2ssk" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+
     <footer>
-        <p> &copy; 2024  Osuský Architekti, s.r.o. All rights reserved.</p>
+        <p>&copy; 2024 Osuský Architekti, s.r.o. Všetky práva vyhradené.</p>
     </footer>
 
     <script>
-        // JavaScript to toggle the navigation menu on and off for smaller screens
         const menuIcon = document.querySelector('.menu-icon');
         const nav = document.querySelector('nav');
 
         menuIcon.addEventListener('click', () => {
             nav.classList.toggle('active');
-            menuIcon.classList.toggle('active'); // Toggle active class for animation
+            menuIcon.classList.toggle('active');
         });
     </script>
 </body>
